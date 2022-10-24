@@ -30,8 +30,8 @@ public struct Font {
 
     public init(
         family: String,
-        slant: Cairo.FontSlant,
-        weight: Cairo.FontWeight
+        slant: Cairo.FontSlant = .normal,
+        weight: Cairo.FontWeight = .normal
     ) {
         self.family = family
         self.slant = slant
