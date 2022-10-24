@@ -1,3 +1,4 @@
+import Cairo
 import Utils
 
 public struct Text {
@@ -16,5 +17,21 @@ public struct Text {
         self.fontSize = fontSize
         self.position = position
         self.color = color
+    }
+}
+
+public struct Font {
+    public let family: String
+    public let slant: Cairo.FontSlant
+    public let weight: Cairo.FontWeight
+
+    public init(
+        family: String,
+        slant: Cairo.FontSlant,
+        weight: Cairo.FontWeight
+    ) {
+        self.family = family
+        self.slant = slant
+        self.weight = weight
     }
 }

@@ -129,6 +129,15 @@ public class CairoGraphics: Graphics {
         context.show(text: text.value)
     }
 
+    public func draw(_ text: Text, font: Font) {
+        markImageAsUnflushed()
+
+        context.setSource(color: text.color.asDoubleTuple)
+        context.setFont(face: (font.family, font.slant, font.weight))
+        context.move(to: text.position.asTuple)
+        context.show(text: text.value)
+    }
+
     public func draw(_ ellipse: Ellipse<Double>) {
         markImageAsUnflushed()
 
