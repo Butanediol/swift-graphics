@@ -125,16 +125,11 @@ public class CairoGraphics: Graphics {
 
         context.setSource(color: text.color.asDoubleTuple)
         context.setFont(size: text.fontSize)
-        context.move(to: text.position.asTuple)
-        context.show(text: text.value)
-    }
 
-    public func draw(_ text: Text, font: Font) {
-        markImageAsUnflushed()
+        if let font = text.font {
+            context.setFont(face: (font.family, font.slant, font.weight))
+        }
 
-        context.setSource(color: text.color.asDoubleTuple)
-        context.setFont(size: text.fontSize)
-        context.setFont(face: (font.family, font.slant, font.weight))
         context.move(to: text.position.asTuple)
         context.show(text: text.value)
     }

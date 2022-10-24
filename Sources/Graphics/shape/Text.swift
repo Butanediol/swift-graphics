@@ -6,17 +6,20 @@ public struct Text {
     public let fontSize: Double
     public let position: Vec2<Double>
     public let color: Color
+    public let font: Font?
 
     public init(
         _ value: String,
         withSize fontSize: Double = 12,
         at position: Vec2<Double> = Vec2(x: 0, y: 12),
-        color: Color = .white
+        color: Color = .white,
+        font: Font? = nil
     ) {
         self.value = value
         self.fontSize = fontSize
         self.position = position
         self.color = color
+        self.font = font
     }
 }
 
