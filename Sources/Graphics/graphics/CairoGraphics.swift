@@ -133,6 +133,7 @@ public class CairoGraphics: Graphics {
         markImageAsUnflushed()
 
         context.setSource(color: text.color.asDoubleTuple)
+        context.setFont(size: text.fontSize)
         context.setFont(face: (font.family, font.slant, font.weight))
         context.move(to: text.position.asTuple)
         context.show(text: text.value)
